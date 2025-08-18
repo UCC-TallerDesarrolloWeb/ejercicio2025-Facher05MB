@@ -18,25 +18,69 @@
     https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_output-->
 
 <h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
-Nombre:
-Apellido:
-Sexo: Masculino Femenino
-Edad:
-Email:
-Usuario:
-Password:
-Confirmar Password:
+<form name="sucribete"></form>
+    <p>
+        Nombre: <input type="text"name="nombre">
+    </p>
+    <p>
+        Apellido: <input type="text"name="apellido">
+    </p>
+    <p>
+        Sexo <input type="radio" name="gender" value="masculino">Masculino <br>
+             <input type="radio" name="gender" value="fememnino"> Femenino
+    </p>
+    <p>
+        Edad: <input type="number">
+    </p>
+    <p>
+        Email: <input type="email">
+    </p>
+    <p>
+        Usuario: <input type="text"name="Usuario">
+    </p>
+    <p>
+        Contraseña: <input type="password"name="password">
+    </p>
+    <p>
+        Confirmar Contraseña: <input type="password"name="password_2">
+    </p>
+    <p>
+        Tipo de servicio: 
+        <select name="servicio" id="servicios">
+            <option value="Free">Free</option>
+            <option value="Standard">Standard</option>
+            <option value="Premium">Premium</option>
+        </select>
+     
+    </p>
+    <p>
+        Tema:
+        <input type="checkbox" name="politica" value="politica">
+        Política
+        <input type="checkbox" name="Negocios" value="Negocios">
+        Negocios
+        <input type="checkbox" name="Tecnología" value="Tecnología">
+        Tecnología
+        <input type="checkbox" name="Salud" value="Salud">
+        Salud
+    </p>
+    <p>
+        Agregue un comentario:
+         <textarea name="comentario" id="123">a</textarea>
 
-Tipo de servicio: Free / Standard / Premium
-Tema:
-Política
-Negocios
-Tecnología
-Salud
+    </p>
+    <p>
+        <button type="boton">enviar</button>
+    </p>
 
-Agregue un comentario:
+</form>
 
-Boton de Enviar
+
+
+
+
+
+
 
 
 </body>
