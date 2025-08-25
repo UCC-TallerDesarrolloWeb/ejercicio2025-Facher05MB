@@ -18,7 +18,9 @@
     </p>
     <p>
         El caballo emite el siguiente sonido:
-        <!--Insertar audio de la carpeta resources-->
+      <audio src="resources/horse.ogg"controls autoplay>
+        <p> tu navejador no implemneta  el elemento de audio</p>
+      </audio>
     </p>
 </div>
 
@@ -34,7 +36,20 @@
     </p>
     <p>
         En Alaska, cuando el salmón remonta el río para el desove estival, los osos pueden reunirse para pescar.
-        <!--Insertar Video de osos pescando ubicado en la carpeta de resources-->
+        <br>
+        
+        <video controls>
+            <source src="resources/movie.mp4" type="video/mp4">
+            <source src="resources/movie.ogg" type="video/ogg">
+            <track src="subtiulos.vtt" kind="subtitles" srclang="en" label="English">
+            Tu navegador no implementa el elemento <code>video</code>.
+        </video>
+
+
+        <iframe src="ej_animales.html" frameborder="0"></iframe>
+     
+        </video>
+        </iframe>
     </p>
 </div>
 <div>
@@ -46,7 +61,9 @@
         Es un animal de gran tamaño, ya que un león macho puede llegar a pesar aproximadamente hasta 300 kilogramos,
         siendo de esta manera el félido vivo mas grande después de su pariente el Tigre.
     </p>
-    <!--Insertar video de youtube sobre leones-->
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/zfo0s27QE-E?si=_hPIPTitOdSc3mii" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
+
 </body>
 </html>
