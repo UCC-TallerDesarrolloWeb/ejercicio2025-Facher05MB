@@ -3,60 +3,16 @@
 <html lang="es">
   <head>
     <title>catalago de productos</title>
-
-    <style>
-      main {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        text-align: center;
-      }
-
-      main div {
-        border: 1px solid black;
-        border-radius: 15%;
-        margin: 15px;
-        padding: 15px;
-      }
-      div img {
-        width: 100%;
-        height: 80%x;
-      }
-
-      .item1 {
-        grid-area: header;
-      }
-      .item2 {
-        grid-area: nav;
-      }
-      .item3 {
-        grid-area: aside;
-      }
-      .item4 {
-        grid-area: main;
-      }
-      .item5 {
-        grid-area: footer;
-      }
-
-      .grid-container {
-        display: grid;
-        grid-template-areas:
-          "header header header header"
-          "nav nav nav nav"
-          "aside main main main"
-          "footer footer footer footer";
-      }
-
-      .guapo {
-        width: 40%;
-        align-self: center;
-      }
-    </style>
+    <link rel="stylesheet" href="productos.css" type="text/css" />
   </head>
 
   <body class="grid-container">
     <header class="item1">catalogo de productos</header>
-    <nav class="item2">botones de navegacion</nav>
+    <!--<nav class="item2">botones de navegacion</nav> -->
+    <nav class="item2">
+      <a href="catalogo productos">catalogo productos</a>
+      <a href="catalogo componentes">catalogo componenetes</a>
+    </nav>
     <aside calss="item3">
       <form>
         <fieldset>
@@ -104,7 +60,7 @@
     </aside>
 
     <main class="item4">
-      <div>
+      <div class="objeto">
         <img
           src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp"
           alt="cabezal cerrado"
