@@ -7,7 +7,7 @@
         margin: 10px;
         padding: 20px;
         background-color: rgba(61, 42, 165, 0.432);
-        text-shadow: 5px 5px rgb(122, 101, 101); /*sombrita*/
+        text-shadow: 5px 5px rgb(104, 101, 122); /*sombrita*/
       }
 
       #guapo { /*foto*/
@@ -27,6 +27,6 @@
         background: linear-gradient(to right, blue, red);
       }
 
-      .titulo {
-        text-shadow: 1px 1px rgb(218, 79, 79);
+      .titulo { /*class titulo*/
+        text-shadow: 1px 1px rgb(79, 218, 91);
       }
