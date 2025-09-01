@@ -1,0 +1,32 @@
+
+/*adad*/
+
+
+      div {
+        border: 1px solid blue;
+        margin: 10px;
+        padding: 20px;
+        background-color: rgba(61, 42, 165, 0.432);
+        text-shadow: 5px 5px rgb(122, 101, 101); /*sombrita*/
+      }
+
+      #guapo { /*foto*/
+        width: 20%;
+        float: left;
+        border-radius: 30%; /*borde redondo*/
+      }
+
+      h3 {
+        text-shadow: 10px 5px white;
+      }
+
+      body {
+        text-align: center;
+        font-family: "Smooch Sans", sans-serif; /* la descarge*/
+        font-size: 25px;
+        background: linear-gradient(to right, blue, red);
+      }
+
+      .titulo {
+        text-shadow: 1px 1px rgb(218, 79, 79);
+      }
