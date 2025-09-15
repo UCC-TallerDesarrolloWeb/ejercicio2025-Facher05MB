@@ -70,4 +70,19 @@ const productos = [
   document.getElementById("detalle").style.display = "none";
 } 
 
+function mostrarCatalogo() {
+  let contenido = "";
 
+  productos.forEach((prod, i) => {
+    contenido += `
+      <div class="producto">
+        <img src="images/${prod.imagen}" alt="${prod.nombre}" />
+        <h3>${prod.nombre}</h3>
+        <p>Precio: $${prod.precio}</p>
+        <button type="button" onclick="mostrardetalle(productos[${i}])">Ver detalle</button>
+      </div>
+    `;
+  });
+  
+  document.getElementById("catalogo").innerHTML = contenido;
+}

@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-
 <html lang="es">
   <head>
-    <title>catalago de productos</title>
+    <title>Catálogo de productos</title>
     <link rel="stylesheet" href="productos.css" type="text/css" />
-    <script text="text/JavaScript" src="tienda.js"></script>
+    <script src="tienda.js" defer></script>
   </head>
 
-  <body class="grid-container">
-    <header class="item1">catalogo de productos</header>
-    <!--<nav class="item2">botones de navegacion</nav> -->
+  <body class="grid-container" onload="mostrarCatalogo()">
+    <header class="item1">Catálogo de productos</header>
     <nav class="item2">
-      <a href="catalogo productos">catalogo productos</a>
-      <a href="catalogo componentes">catalogo componenetes</a>
+      <a href="catalogo_productos.html">Catálogo productos</a>
+      <a href="catalogo_componentes.html">Catálogo componentes</a>
     </nav>
-    <aside calss="item3">
+
+    <aside class="item3">
       <form>
         <fieldset>
-          <legend>search</legend>
+          <legend>Buscar</legend>
           <input type="text" id="search" name="search" placeholder="search" />
         </fieldset>
+
         <fieldset>
-          <legend>precios pa-pá</legend>
+          <legend>Precios</legend>
           <p>
-            <label for="precio-min"> precio minimo</label>
+            <label for="price-min">Precio mínimo</label>
             <input
               type="number"
               id="price-min"
@@ -33,7 +33,7 @@
             />
           </p>
           <p>
-            <label for="price-max">precio max</label>
+            <label for="price-max">Precio máximo</label>
             <input
               type="number"
               id="price-max"
@@ -43,73 +43,36 @@
             />
           </p>
         </fieldset>
+
         <fieldset>
-          <legend>tipo producto papi</legend>
-          <p></p>
-          <input type=" checkbox" id="protectores" name="protectores" />
-          <label for="protectores">protectores</label>
+          <legend>Tipo de producto</legend>
           <p>
-            <input type=" checkbox" id="entrenamiento" name="entrenamiento" />
-            <label for="entrenamiento">entrenamiento</label>
+            <input type="checkbox" id="protectores" name="protectores" />
+            <label for="protectores">Protectores</label>
           </p>
           <p>
-            <input type=" checkbox" id="dobok" name="dobok" />
-            <label for="dobok">dobok</label>
+            <input type="checkbox" id="entrenamiento" name="entrenamiento" />
+            <label for="entrenamiento">Entrenamiento</label>
+          </p>
+          <p>
+            <input type="checkbox" id="dobok" name="dobok" />
+            <label for="dobok">Dobok</label>
           </p>
         </fieldset>
       </form>
     </aside>
 
-    <main class="item4">
-      <dialog id="detalle">
-        <h2>Detalle del producto</h2>
-        <h3>cabezal Cerrado</h3>
-        <p>Este producto viene del talle 1 al 3.</p>
-        <button type="button" onclick="cerrarmodal()">cerrar/</button>
-      </dialog>
-      <div class="objeto">
-        <img
-          src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp"
-          alt="cabezal cerrado"
-        />
-        <h3>cabezal-cerrado</h3>
-        <button type="button" onclick="mostrardetalle()">mostrardetalle</button>
-      </div>
-      <div>
-        <img
-          src="../Ejercicios-JavaScript/images/escudo-potencia.webp"
-          alt="escudo potencia"
-        />
-        <h3>escudo potencia</h3>
-      </div>
-      <div>
-        <img
-          src="../Ejercicios-JavaScript/images/foco-con-dedos.webp"
-          alt="foco con dedos"
-        />
-        <h3>foco con dedos</h3>
-      </div>
-      <div>
-        <img
-          src="../Ejercicios-JavaScript/images/protectores-manos.webp"
-          alt="protectores de manos"
-        />
-        <h3>protectores de mano</h3>
-      </div>
-      <div>
-        <img src="../Ejercicios-JavaScript/images/dobok.webp" alt="dobok" />
-        <h3>dobok</h3>
-      </div>
-      <div>
-        <img
-          src="../Ejercicios-JavaScript/images/protectores-pie.webp"
-          alt="protectores pie"
-        />
-        <h3>protectores pie</h3>
-      </div>
-    </main>
+    <dialog id="detalle">
+      <h2>Detalle del producto</h2>
+      <h3>cabezal Cerrado</h3>
+      <p>Este producto viene del talle 1 al 3.</p>
+      <button type="button" onclick="cerrarmodal()">cerrar/</button>
+    </dialog>
+
+    <main class="item4" id="catalogo"></main>
+
     <footer class="footer">
-      yo soy yo
+      Yo soy yo
       <img
         src="../Ejercicios-CSS/imagenes/guapo.png"
         alt="guapo"
