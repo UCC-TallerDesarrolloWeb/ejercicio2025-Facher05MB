@@ -10,7 +10,9 @@ function conversor(unidad,valor){
 
     let metro, pie ,pulgada, yarda
 
-
+    if(valor.includes(",")){
+        valor = valor.replace(",",".");
+    }
 
     console.log(valor);
     console.log(isNaN(valor))
@@ -57,10 +59,10 @@ function conversor(unidad,valor){
     }
 
    
-    document.getElementById("metro").value = metro;
-    document.getElementById("pie").value = pie;
-    document.getElementById("pulgada").value = pulgada;
-    document.getElementById("yarda").value = yarda;
+    document.getElementById("metro").value = Number(metro).toFixed(2);
+    document.getElementById("pie").value = Math.round(pie*100)/100;
+    document.getElementById("pulgada").value = Number(pulgada).toFixed(2);
+    document.getElementById("yarda").value = Math.round(yarda*100)/100;
 }
 
 
@@ -84,4 +86,34 @@ let convertirGR = (id,valor) => {
         cantGrados = cantRadianes*180/Math.PI;
         document.getElementById("grados").value = cantGrados;
     }
-}
+
+
+
+
+
+
+      
+        }
+  let mostrarOcultarDiv = (id) =>{
+                if (id=="mostrarDiv"){
+                    document.getElementsByName("unDiv")[0].style.display = "block";
+                }else{
+                    document.getElementsByName("unDiv")[0].style.display = "none";
+                }
+            };
+
+
+
+let  sumar = () =>{
+    let sum1= document.getElementById("nums1").value;
+    let sum2= document.getElementById("nums2").value;
+
+    if(isNaN(sum1) || isNaN(sum2)){
+        alert("una de las variables ingresadas no es numerica")
+    } else{
+         document.getElementById("Totals").value = Number(sum1) + Number(sum2);
+    }
+
+};
+
+        
