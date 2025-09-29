@@ -1,3 +1,5 @@
+
+
 const productos = [
   {
     nombre: "Cabezal Sparring",
@@ -62,27 +64,167 @@ const productos = [
   },
 ];
 
- let mostrardetalle = () =>{
-  document.getElementById("detalle").style.display = "block";
-} 
+ function mostrardetalle(id) {
+  const prod = productos[id];
 
- let cerrarmodal = () =>{
-  document.getElementById("detalle").style.display = "none";
-} 
+  document.getElementById("titulo_prod").innerText = prod.nombre;
+  document.getElementById("descr-prod").innerText = prod.description;
+  document.getElementById("precio-prod").innerText = `$${prod.precio}`;
 
-function mostrarCatalogo() {
+  document.getElementById("detalle").showModal(); // usa el <dialog>
+}
+
+function cerrarmodal() {
+  document.getElementById("detalle").close();
+}
+
+const mostrarCatalogo = (prod = productos) => {
   let contenido = "";
 
-  productos.forEach((prod, i) => {
+  prod.forEach((item, i) => {
     contenido += `
       <div class="producto">
-        <img src="images/${prod.imagen}" alt="${prod.nombre}" />
-        <h3>${prod.nombre}</h3>
-        <p>Precio: $${prod.precio}</p>
-        <button type="button" onclick="mostrardetalle(productos[${i}])">Ver detalle</button>
+        <img src="images/${item.imagen}" alt="${item.nombre}" />
+        <h3>${item.nombre}</h3>
+        <p>Precio: $${item.precio}</p>
+        <button type="button" onclick="mostrardetalle(${i})">Ver detalle</button>
+        <button type="button" onclick="agregar_al_carrito(${i})">Agregar al carrito</button>
       </div>
     `;
   });
-  
+
   document.getElementById("catalogo").innerHTML = contenido;
+};
+
+
+
+
+
+let agregar_al_carrito= (id)=> {
+  let listadoProductos;
+
+const listadoInicial = JSON.parse(localStorage.getItem("carrito"));
+
+
+if(listadoInicial == null){
+  listadoProductos = [];
+}else{
+  listadoProductos = listadoInicial;
+  
 }
+
+listadoProductos.push(id);
+  localStorage.setItem("carrito", JSON.stringify(listadoProductos));
+
+
+
+
+
+
+
+}
+
+
+
+let mostrarCarrito = () =>{
+  let contenido= "";
+  const carrito = JSON.parse(localStorage.getItem("carrito"));
+
+  carrito .forEach((num) => {
+    contenido += `
+      <div class="producto">
+        <h3> ${productos[num].nombre} </h3>
+        <p> ${productos[num].precio} </p>
+      </div>
+    `;
+
+});
+document.getElementById("carrito").innerHTML = contenido;
+
+/*if (carrito.length> 0 ){
+  localStorage.setItem"carrito",JSON.stringify(carrito)
+} else {
+localStorage.removeItem("carrito")
+}*/
+
+
+
+
+
+
+}
+
+let filtrarProducto = () =>{
+  let searchWord = document.getElementById("search").value;
+  let min = document.getElementById("price-min").value;
+  let max = document.getElementById("price-max").value;
+
+
+
+  let prot = document.getElementById("protectores").Checked;
+  let entr = document.getElementById("entrenamiento").Checked;
+  let dob = document.getElementById("dobok").Checked;
+
+
+
+
+  let marca  = document.getElementById("Marca").value;
+
+
+  let newlista=productos;
+
+  newlista = newlista.filter( (prod) =>
+  prod.nombre.toLowerCase().includes(searchWord.toLowerCase() ) 
+  || prod.description.toLowerCase().includes(searchWord.toLowerCase() )
+  );
+
+
+
+
+  if(min){
+    newlista = newlista.filter((prod) => prod.precio >= min);
+  }
+
+  
+  if(max){
+    newlista = newlista.filter((prod) => prod.precio <=max);
+  }
+
+
+
+  let category = [];
+
+  prot ? category.push("Protectores"):"";
+  entr ? category.push("Entrenamiento"): "";
+  dob ? category.push("Dobok"):"";
+
+  if(category.length >0 ) {
+    newlista = newlista.filter((prod) => category.includes(prod.categoria));
+  }
+
+  if (marca != "Todas"){
+    newlista = newlista.filter((prod) => prod.marca == marca);
+  }
+
+
+  mostrarCatalogo(newlista);
+
+
+
+};
+
+
+let formatPrice = (price) => {
+
+  const numberFormat = new Intl.NumberFormat("es-AR",{
+    currency: "ARS",
+    style: "currency",});
+    return numberFormat.format(price);  
+
+  
+}
+
+
+
+
+

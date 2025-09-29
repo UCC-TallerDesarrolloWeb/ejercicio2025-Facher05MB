@@ -17,7 +17,13 @@
       <form>
         <fieldset>
           <legend>Buscar</legend>
-          <input type="text" id="search" name="search" placeholder="search" />
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="search"
+            onchange="filtrarProducto()"
+          />
         </fieldset>
 
         <fieldset>
@@ -28,7 +34,7 @@
               type="number"
               id="price-min"
               name="price-min"
-              value="0"
+              value=""
               min="0"
             />
           </p>
@@ -38,7 +44,7 @@
               type="number"
               id="price-max"
               name="price-max"
-              value="0"
+              value=""
               min="0"
             />
           </p>
@@ -59,14 +65,24 @@
             <label for="dobok">Dobok</label>
           </p>
         </fieldset>
+
+        <fieldset>
+          <legend>Marca</legend>
+          <select name="" id="Marca" onchange="filtrarProducto()">
+            <option value="Todas">Todas</option>
+            <option value="Gran Marca">Gran Marca</option>
+            <option value="Daedo">Daedo</option>
+          </select>
+        </fieldset>
       </form>
     </aside>
 
     <dialog id="detalle">
       <h2>Detalle del producto</h2>
-      <h3>cabezal Cerrado</h3>
-      <p>Este producto viene del talle 1 al 3.</p>
-      <button type="button" onclick="cerrarmodal()">cerrar/</button>
+      <h3 id="titulo_prod">cabezal Cerrado</h3>
+      <p id="descr-prod">Este producto viene del talle 1 al 3.</p>
+      <p id="precio-prod">precio</p>
+      <button type="button" onclick="cerrarmodal()">CERRAR</button>
     </dialog>
 
     <main class="item4" id="catalogo"></main>
