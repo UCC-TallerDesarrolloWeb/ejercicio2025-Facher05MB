@@ -1,0 +1,27 @@
+@media(width<700px){
+#features{
+    .container{
+       
+        grid-template-columns: repeat(1,1fr);
+        
+    }
+}
+
+
+#navbar{
+    padding: 20px 0;
+    .container{
+        flex-direction: column;
+        ul{
+           display: flex;
+            list-style: none;
+            li{
+                margin-left: 0PX;
+                padding: 15px;
+            }
+        }   
+    }
+    
+}
+}
+    

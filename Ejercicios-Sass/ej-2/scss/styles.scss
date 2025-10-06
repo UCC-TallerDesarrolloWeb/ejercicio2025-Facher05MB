@@ -1,0 +1,121 @@
+@use 'mobile';
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Smooch+Sans:wght@100..900&display=swap');
+
+
+$primary-color: orange  ; 
+$font-stach: "Bebas Neue, sans-serif";
+
+*{
+    margin:10px;
+    padding: 0px;
+    box-sizing: border-box;
+
+
+}
+
+body{
+
+ font-family: $font-stach;
+}
+
+h1{
+    font-size: 1,5rem;
+}
+
+h4{
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.9rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.container{
+    margin: auto;
+    max-width: 1300px;
+    padding: 0 20px;
+}
+
+.large{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+
+.bk-primary{
+    background: $primary-color;
+}
+
+.btn{
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    padding: 12px 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    &-light{
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#navbar{
+    padding: 20px 0;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        .logo img{
+            height: 50px;
+        }
+        ul{
+           display: flex;
+            list-style: none;
+            li{
+                margin-left: 40px;
+                text-transform: uppercase;
+                a{
+                    color: black;
+                }
+            }
+        }   
+    }
+    
+}
+
+
+#showcase{
+    padding: 20px 0;
+    color: white;
+    .bk-primary{
+        padding: 40px 80px;
+        p{
+            padding: 10px 0px;
+        }
+    }
+}
+
+
+#features{
+    .container{
+        display: grid;
+        @media (width>=700px){
+        grid-template-columns: repeat(2,1fr);}
+        padding: 20px 0;
+        image{
+            width: 100% ;
+        }
+    }
+}
+
+#mainfooter{
+    .container{
+        text-align: center;
+        padding: 30px;
+    }
+}
