@@ -77,7 +77,7 @@ const productos = [
 function cerrarmodal() {
   document.getElementById("detalle").close();
 }
-
+ /* todo esto es el mostrar solo*/
 const mostrarCatalogo = (prod = productos) => {
   let contenido = "";
 
