@@ -1,0 +1,41 @@
+{ "activities": [
+
+//a todas las kyes meterle ""
+
+//npx json-server watch src data activities json --port 4000
+
+
+
+// comentar la linea de data activities (./../ actibvities )en el activities.jsx
+
+
+
+
+
+// todo esto en activites.jsx
+
+
+const [activities, setActivities] = useState([]);
+
+const BASE_URL = "https://localhost:4000/";
+
+
+const fetchActivities = async() => {
+    try{
+
+    
+    const response = await fetch(BASE_URL);
+    const data = await response.json();
+    setActivities(data);
+    }catch(error){
+        console.error("error al retornar las actividades $(error)")
+    }
+}
+
+
+UseEffect(() => {
+   fetchActivities();
+},[])
+
+]
+}

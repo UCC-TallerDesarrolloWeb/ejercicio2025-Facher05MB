@@ -1,0 +1,1 @@
+//copiar todo esto en activities
